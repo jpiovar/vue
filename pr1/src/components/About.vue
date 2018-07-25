@@ -1,15 +1,15 @@
 <template>
  <div> 
-  <span id="ok">ok {{msg}}</span>
+  <span class="info">{{msg}}</span>
  </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'About',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'About vue js'
     }
   }
 }
@@ -17,7 +17,7 @@ export default {
 
 
 <style scoped>
-#ok{
+.info{
   color: blue;
 }
 </style>
