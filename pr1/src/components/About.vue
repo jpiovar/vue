@@ -1,6 +1,7 @@
 <template>
  <div> 
   <span class="info">{{msg}}</span>
+  <span>{{getMsg('ok')}}</span>
  </div>
 </template>
 
@@ -10,6 +11,11 @@ export default {
   data () {
     return {
       msg: 'About vue js'
+    }
+  },
+  methods: {
+    getMsg: function(a) {
+      return 'get msg about' +a;
     }
   }
 }
