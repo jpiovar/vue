@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2015",
+        "noImplicitAny": false,
+        "sourceMap": false,
+        "outDir": "dist",
+        "allowJs": true
+    },
+    "include": [
+        "./specs/**/*.ts",
+        "index.d.ts",
+        "globals.ts",
+        "custom-assertions/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
