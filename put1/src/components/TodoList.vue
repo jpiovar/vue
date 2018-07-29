@@ -8,6 +8,9 @@
       <input type="text" id="search" v-model="searchInput"> you are searching: {{searchInput}}
     </div>
     <div>
+      <button v-on:click="AddItem">Add item</button>
+    </div>
+    <div>
       <ul>
         <li v-for="item in items" :key="item.id">
         {{item.label}}
@@ -20,7 +23,7 @@
 <script>
 export default {
   name: 'TodoList',
-  data () {
+  data() {
     return {
       obj: {
         title: 'Todo list component',
@@ -39,6 +42,10 @@ export default {
         }
       ],
       searchInput: ''
+    }
+  },
+  methods: {
+    AddItem () {debugger;
     }
   }
 }

@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'HelloWorld',
-  data () {
+  data() {
     return {
       obj: {
         title: 'About component title',
