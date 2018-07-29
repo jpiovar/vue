@@ -12,7 +12,7 @@
     </div>
     <div>
       <ul>
-        <li v-for="item in items" :key="item.id">
+        <li v-for="item in items">
         {{item.label}}
         </li>
       </ul>
