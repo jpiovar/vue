@@ -4,6 +4,16 @@
     <div>
       {{obj.info}}
     </div>
+    <div>
+      <input type="text" id="search" v-model="searchInput"> you are searching: {{searchInput}}
+    </div>
+    <div>
+      <ul>
+        <li v-for="item in items" :key="item.id">
+        {{item.label}}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -15,7 +25,20 @@ export default {
       obj: {
         title: 'Todo list component',
         info: 'Todo list information'
-      }
+      },
+      items: [
+        {
+          id: 'id1',
+          label: 'item1 abc',
+          description: 'item1 is more complexed information about nothing'
+        },
+        {
+          id: 'id2',
+          label: 'item2 abcefgh',
+          description: 'item2 is less complexed information about nothing'
+        }
+      ],
+      searchInput: ''
     }
   }
 }
