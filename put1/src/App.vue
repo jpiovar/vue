@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import About from './components/About';
-import TodoList from './components/TodoList';
+import About from './components/About'
+import TodoList from './components/TodoList'
 
 export default {
   name: 'App',
@@ -15,7 +15,7 @@ export default {
     About,
     TodoList
   }
-};
+}
 </script>
 
 <style>

@@ -23,7 +23,7 @@
 <script>
 export default {
   name: 'TodoList',
-  data() {
+  data () {
     return {
       obj: {
         title: 'Todo list component',
@@ -45,7 +45,9 @@ export default {
     }
   },
   methods: {
-    AddItem () {debugger;
+    AddItem () {
+      debugger;
+      console.log('ok');
     }
   }
 }
