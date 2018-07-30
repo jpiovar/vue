@@ -15,8 +15,10 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex';
+
 export default {
-  name: 'HelloWorld',
+  name: 'About',
   props: ['title1', 'title2'],
   data () {
     return {
@@ -31,10 +33,13 @@ export default {
       debugger;
       Event.$emit('eventTriggered');
     },
-    affectItems (a) {
-      debugger;
-      this.$store.dispatch('affectItemsAction',a);
-    }
+    // affectItems (a) {
+    //   debugger;
+    //   this.$store.dispatch('affectItemsAction', a);
+    // }
+    ...mapActions({
+      affectItems: 'affectItemsAction'
+    })
   }
 }
 </script>

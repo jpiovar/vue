@@ -35,6 +35,9 @@
 </template>
 
 <script>
+// import {mapActions} from 'vuex';
+import {mapGetters} from 'vuex';
+
 export default {
   name: 'TodoList',
   data () {
@@ -70,9 +73,12 @@ export default {
     items () {
       return this.$store.state.items;
     },
-    doubleItems () {
-      return this.$store.getters.doubleItems;
-    }
+    // doubleItems () {
+    //   return this.$store.getters.doubleItems;
+    // }
+    ...mapGetters([
+      'doubleItems'
+    ])
   },
   created () {
     Event.$on('eventTriggered', () => {

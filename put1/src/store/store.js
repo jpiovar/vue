@@ -40,7 +40,7 @@ export const store = new Vuex.Store({
   actions: {
     affectItemsAction: (context, payload) => {
       setTimeout(() => {
-        context.commit('affectItemsMutation', a);
+        context.commit('affectItemsMutation', payload);
       }, 2000);
     }
   }
