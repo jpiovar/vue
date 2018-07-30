@@ -8,6 +8,9 @@
       {{title1}} and {{title2}}
     </div>
     <button @click="eventTrigger">trigger event</button>
+    <div>
+      <button @click="affectItems('affectedItem')">Affect Items store</button>
+    </div>
   </div>
 </template>
 
@@ -24,8 +27,13 @@ export default {
     }
   },
   methods: {
-    eventTrigger () {debugger;
+    eventTrigger () {
+      debugger;
       Event.$emit('eventTriggered');
+    },
+    affectItems (a) {
+      debugger;
+      this.$store.dispatch('affectItemsAction',a);
     }
   }
 }

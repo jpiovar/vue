@@ -24,6 +24,13 @@
         </li>
       </ul>
     </div>
+    <div>double
+      <ul>
+        <li v-for="item in doubleItems">
+        {{item.label}}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -37,18 +44,6 @@ export default {
         title: 'Todo list component',
         info: 'Todo list information'
       },
-      items: [
-        {
-          id: 'id1',
-          label: 'item1 abc',
-          description: 'item1 is more complexed information about nothing'
-        },
-        {
-          id: 'id2',
-          label: 'item2 abcefgh',
-          description: 'item2 is less complexed information about nothing'
-        }
-      ],
       searchInput: '',
       addInput: '',
       initStatus: true
@@ -71,9 +66,15 @@ export default {
   computed: {
     secondIndex () {
       return this.items.filter((item, index) => (index % 2 === 0));
+    },
+    items () {
+      return this.$store.state.items;
+    },
+    doubleItems () {
+      return this.$store.getters.doubleItems;
     }
   },
-  created() {
+  created () {
     Event.$on('eventTriggered', () => {
       debugger;
     });
