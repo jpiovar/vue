@@ -8,11 +8,18 @@
       <input type="text" id="search" v-model="searchInput"> you are searching: {{searchInput}}
     </div>
     <div>
-      <input type="text" id="add" v-model="addInput"> <button :class="{'initClass':initStatus, 'normalClass':!initStatus}" :title="btnTitle" @click="AddItem('o')">Add item</button>
+      <input type="text" id="add" v-model="addInput"> <button :class="{'initClass':initStatus, 'normalClass':!initStatus}" :title="btnTitle" @click="addItem('o')">Add item</button>
     </div>
-    <div>
+    <div>Original
       <ul>
         <li v-for="item in items">
+        {{item.label}}
+        </li>
+      </ul>
+    </div>
+    <div>second index
+      <ul>
+        <li v-for="item in secondIndex">
         {{item.label}}
         </li>
       </ul>
@@ -48,7 +55,7 @@ export default {
     }
   },
   methods: {
-    AddItem (a) {
+    addItem (a) {
       debugger;
       console.log('ok');
       const idItem = 'id' + (this.items.length + 1);
@@ -59,6 +66,11 @@ export default {
       });
       this.addInput = '';
       this.initStatus = false;
+    }
+  },
+  computed: {
+    secondIndex () {
+      return this.items.filter((item, index) => (index % 2 == 0) );
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <About/>
+    <About title1="title1 about" title2="title2 about"/>
     <TodoList/>
   </div>
 </template>

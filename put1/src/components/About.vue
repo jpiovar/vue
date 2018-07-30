@@ -4,12 +4,16 @@
     <div>
       {{obj.info}}
     </div>
+    <div>
+      {{title1}} and {{title2}}
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  props: ['title1', 'title2'],
   data () {
     return {
       obj: {
