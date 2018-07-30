@@ -8,7 +8,7 @@
       <input type="text" id="search" v-model="searchInput"> you are searching: {{searchInput}}
     </div>
     <div>
-      <input type="text" id="add" v-model="addInput"> <button :title="btnTitle" @click="AddItem('o')">Add item</button>
+      <input type="text" id="add" v-model="addInput"> <button :class="{'initClass':initStatus, 'normalClass':!initStatus}" :title="btnTitle" @click="AddItem('o')">Add item</button>
     </div>
     <div>
       <ul>
@@ -43,7 +43,8 @@ export default {
         }
       ],
       searchInput: '',
-      addInput: ''
+      addInput: '',
+      initStatus: true
     }
   },
   methods: {
@@ -57,6 +58,7 @@ export default {
         description: this.addInput + 'description'
       });
       this.addInput = '';
+      this.initStatus = false;
     }
   }
 }
@@ -65,5 +67,11 @@ export default {
 <style scoped>
 .wrapper{
   background: lightblue;
+}
+.initClass{
+  background: red;
+}
+.normalClass{
+  background: blue;
 }
 </style>
