@@ -7,6 +7,7 @@
     <div>
       {{title1}} and {{title2}}
     </div>
+    <button @click="eventTrigger">trigger event</button>
   </div>
 </template>
 
@@ -20,6 +21,11 @@ export default {
         title: 'About component title',
         info: 'About information'
       }
+    }
+  },
+  methods: {
+    eventTrigger () {debugger;
+      Event.$emit('eventTriggered');
     }
   }
 }

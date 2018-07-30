@@ -70,8 +70,13 @@ export default {
   },
   computed: {
     secondIndex () {
-      return this.items.filter((item, index) => (index % 2 == 0) );
+      return this.items.filter((item, index) => (index % 2 === 0));
     }
+  },
+  created() {
+    Event.$on('eventTriggered', () => {
+      debugger;
+    });
   }
 }
 </script>
