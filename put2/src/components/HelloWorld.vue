@@ -8,17 +8,28 @@
 <script>
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import {
+  // State,
+  Getter
+  // Action,
+  // Mutation,
+  // namespace
+} from 'vuex-class'
 
 @Component({
   props: ['propMessage']
 })
 export default class HelloWorld extends Vue {
   msg = 'mssssgggg';
+  // @Getter('getItemObj') getItemObjCurrent;
+  @Getter getItemObj;
 
   // computed
   get computedMsg () {
     debugger;
-    return 'computed ' + this.msg + this.$store.getters.getItemObj;
+    // return 'computed ' + this.msg + this.$store.getters.getItemObj;
+    // return 'computed ' + this.msg + this.getItemObjCurrent;
+    return 'computed ' + this.msg + this.getItemObj;
   }
 }
 </script>

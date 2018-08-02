@@ -11,7 +11,13 @@
 import HelloWorld from './components/HelloWorld'
 import Vue from 'vue'
 import Component from 'vue-class-component'
-
+import {
+  // State,
+  // Getter,
+  Action
+  // Mutation,
+  // namespace
+} from 'vuex-class'
 @Component({
   components: {
     HelloWorld
@@ -20,10 +26,14 @@ import Component from 'vue-class-component'
 export default class App extends Vue {
   propMessageApp = 'propMessage ooookkkk';
   ok = 'ooookkkk';
+  // @Action('affectItemObjAction') affectItemObjActionCurrent;
+  @Action affectItemObjAction;
 
   // method
   affectItemObj (parA) {
-    this.$store.dispatch('affectItemObjAction', parA);
+    // this.$store.dispatch('affectItemObjAction', parA);
+    // this.affectItemObjActionCurrent(parA);
+    this.affectItemObjAction(parA);
   }
 }
 </script>
