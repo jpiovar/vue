@@ -26,7 +26,6 @@ export default class HelloWorld extends Vue {
 
   // computed
   get computedMsg () {
-    debugger;
     // return 'computed ' + this.msg + this.$store.getters.getItemObj;
     // return 'computed ' + this.msg + this.getItemObjCurrent;
     return 'computed ' + this.msg + this.getItemObj;
