@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <button @click="affectItemObj('ok')">affect store itemObj</button>
     <img src="./assets/logo.png">
     {{ok}}
     <HelloWorld :propMessage="propMessageApp"/>
@@ -19,6 +20,11 @@ import Component from 'vue-class-component'
 export default class App extends Vue {
   propMessageApp = 'propMessage ooookkkk';
   ok = 'ooookkkk';
+
+  // method
+  affectItemObj (parA) {
+    this.$store.dispatch('affectItemObjAction', parA);
+  }
 }
 </script>
 
