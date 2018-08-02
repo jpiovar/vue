@@ -1,13 +1,24 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <router-view/>
+    {{ok}}
+    <HelloWorld :propMessage="propMessageApp"/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
+import HelloWorld from './components/HelloWorld'
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component({
+  components: {
+    HelloWorld
+  }
+})
+export default class App extends Vue {
+  propMessageApp = 'propMessage ooookkkk';
+  ok = 'ooookkkk';
 }
 </script>
 
