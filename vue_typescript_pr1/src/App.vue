@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <HelloWorld/>
+    <HelloWorld propMessage="propMessageApp"/>
   </div>
 </template>
 
 <script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
 import HelloWorld from './components/HelloWorld';
-
-export default {
-  name: 'App',
+@Component({
   components: {
     HelloWorld
   }
-};
+})
+export default class App extends Vue {
+  propMessageApp = 'propMessage ooookkkk';
+  ok = 'ooookkkk';
+}
 </script>
 
 <style>
