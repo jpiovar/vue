@@ -3,12 +3,20 @@
     <h1>{{ msg }}</h1>
     <p>prop: {{propMessage}}</p>
     <p>computed: {{computedMsg}}</p>
+    <p>store itemObj: {{storeValueItemObj}}</p>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import {
+  // State,
+  Getter
+  // Action,
+  // Mutation,
+  // namespace
+} from 'vuex-class';
 
 @Component({
   props: {
@@ -18,9 +26,14 @@ import Component from 'vue-class-component';
 
 export default class HelloWorld extends Vue {
   msg = 'mssssgggg';
+  // @Getter('getItemObj') getItemObjCurrent;
+  @Getter getItemObj;
   // computed
   get computedMsg() {
     return 'computed'.concat(this.msg).concat(this.$props.propMessage);
+  }
+  get storeValueItemObj() {
+    return this.getItemObj;
   }
 }
 </script>

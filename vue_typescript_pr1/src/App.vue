@@ -1,13 +1,21 @@
 <template>
   <div id="app">
+    <button @click="affectItemObj('ok')">affect store itemObj</button>
     <img src="./assets/logo.png">
-    <HelloWorld propMessage="propMessageApp"/>
+    <HelloWorld :propMessage="propMessageApp"/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import {
+  // State,
+  // Getter,
+  Action
+  // Mutation,
+  // namespace
+} from 'vuex-class';
 import HelloWorld from './components/HelloWorld';
 @Component({
   components: {
@@ -17,6 +25,13 @@ import HelloWorld from './components/HelloWorld';
 export default class App extends Vue {
   propMessageApp = 'propMessage ooookkkk';
   ok = 'ooookkkk';
+  @Action affectItemObjAction;
+  // method
+  affectItemObj(parA) {
+    // this.$store.dispatch('affectItemObjAction', parA);
+    // this.affectItemObjActionCurrent(parA);
+    this.affectItemObjAction(parA);
+  }
 }
 </script>
 
