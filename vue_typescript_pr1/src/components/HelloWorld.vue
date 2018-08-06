@@ -12,11 +12,13 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import {
   // State,
-  Getter
+  // Getter
   // Action,
   // Mutation,
-  // namespace
+  namespace
 } from 'vuex-class';
+
+const UserStore = namespace('user');
 
 @Component({
   props: {
@@ -27,7 +29,9 @@ import {
 export default class HelloWorld extends Vue {
   msg = 'mssssgggg';
   // @Getter('getItemObj') getItemObjCurrent;
-  @Getter getItemObj;
+  // @Getter getItemObj;
+
+  @UserStore.Getter getItemObj: {};
   // computed
   get computedMsg() {
     return 'computed'.concat(this.msg).concat(this.$props.propMessage);

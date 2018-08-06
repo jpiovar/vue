@@ -12,11 +12,15 @@ import Component from 'vue-class-component';
 import {
   // State,
   // Getter,
-  Action
+  // Action,
   // Mutation,
-  // namespace
+  namespace
 } from 'vuex-class';
+import { USER_NAME } from './stores/constants';
 import HelloWorld from './components/HelloWorld';
+
+const UserStore = namespace('user');
+
 @Component({
   components: {
     HelloWorld
@@ -25,7 +29,10 @@ import HelloWorld from './components/HelloWorld';
 export default class App extends Vue {
   propMessageApp = 'propMessage ooookkkk';
   ok = 'ooookkkk';
-  @Action affectItemObjAction;
+
+  @UserStore.Action affectItemObjAction: (obj: Object) => void;
+
+  // @Action affectItemObjAction;
   // method
   affectItemObj(parA) {
     // this.$store.dispatch('affectItemObjAction', parA);
