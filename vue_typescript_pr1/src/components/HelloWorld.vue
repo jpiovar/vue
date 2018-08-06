@@ -18,7 +18,9 @@ import {
   namespace
 } from 'vuex-class';
 
-const UserStore = namespace('user');
+import { USER_NAME } from './stores/constants';
+
+const UserStore = namespace(USER_NAME);
 
 @Component({
   props: {

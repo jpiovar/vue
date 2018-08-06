@@ -16,10 +16,11 @@ import {
   // Mutation,
   namespace
 } from 'vuex-class';
+
 import { USER_NAME } from './stores/constants';
 import HelloWorld from './components/HelloWorld';
 
-const UserStore = namespace('user');
+const UserStore = namespace(USER_NAME);
 
 @Component({
   components: {
